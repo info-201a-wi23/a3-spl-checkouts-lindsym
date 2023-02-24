@@ -14,5 +14,6 @@ ggplot(popular) +
   labs(title = 'Most Popular Book and Their Check Outs Per Year 2017-2023',
        x = "Year",
        y = "Check Outs") +
-  scale_x_continuous(breaks =  seq(2017, 2023, 1))
+  scale_x_continuous(breaks =  seq(2017, 2023, 1)) +
+  coord_flip()
 
