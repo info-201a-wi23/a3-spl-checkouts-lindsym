@@ -5,20 +5,28 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The following is based off the public data set provided by the Seattle Public Library. Due to the sheer size of the data, this specific report uses the data filtered to items that have been checked out more than 10 times from 2017-2023.
+
+The first chart is inspired by J.K. Rowling's popular series Harry Potter. This series has become well known to all since beginning as a book series in 1998 and being adapted in a film series in 2001. Since some time has passed since then, how relevant is this series still? 
+
+The second chart aims to understand just exactly how technology and world events have influenced content consumption. How popular have different media forms been throughout these past five years?
+
+The last chart demonstrates what books were popular in which years and just how popular they were simply by comparing the checkout amount to each year. Can we connect the data to known world events that triggered their popularity?
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+Many people underestimate the resources that the library provides. Some say that with the direction the technology is going, the internet may be all we need and libraries will no longer serve a purpose. To demonstrate that this is not the case at all, here are the total amount of digital and physical items that were checked out from in 2017 and 2022:
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
+- 2017
+  - Digital: 756,756
+  - Physical: 2,763,572
+- 2022
+  - Digital: 1,962,294
+  - Physical: 1,094,618
 
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
+While physical items are being checked out by almost half the amount the once were, digital checkouts have increased by almost 2.6 times. The SPL has done an excellent job of keeping up with technological changes and continuing to provide accessible resources. 
 
-Feel free to calculate and report values that you find relevant.
+
 
 ### The Dataset
 
@@ -80,7 +88,7 @@ The last chart is up to you. It could be a line plot, scatter plot, histogram, b
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-```{r, echo = FALSE, code = readLines("chart3.R")}
+```{r, fig.width=10, fig.height=10, echo = FALSE, code = readLines("chart3.R")}
 ```
 
 
