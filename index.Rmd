@@ -7,16 +7,18 @@ output: html_document
 
 The following is based off the public data set provided by the Seattle Public Library. Due to the sheer size of the data, this specific report uses the data filtered to items that have been checked out more than 10 times from 2017-2023.
 
-The first chart is inspired by J.K. Rowling's popular series Harry Potter. This series has become well known to all since beginning as a book series in 1998 and being adapted in a film series in 2001. How often is it checked out now and through what ? 
+The first chart is inspired by J.K. Rowling's popular series "Harry Potter". This series has become well known to all since its first appearance in 1998 as a book series and its film adaption in 2001. Since some time has passed since then, just how popular is the series now? By using checkout data from 2022 on both books and discs, I attempt to answer this question and find out which media with Harry Potter content is more consumed.
 
-The second chart aims to understand just exactly how technology and world events have influenced content consumption. How popular have different media forms been throughout these past five years?
+The second chart aims to analyze the trends on the three different kinds of books, physical, audiobooks, and ebooks, between 2017 and 2023 based on total checkouts. How has technology and world events affected these numbers, even if at all?
 
-The last chart demonstrates what books were popular in which years and just how popular they were simply by comparing the checkout amount to each year. Can we connect the data to known world events that triggered their popularity?
+The last chart compares what books were popular each year between 2017 and 2023 based on number of checkouts by title. This visualization also demonstrates just how popular each book was compared to the other. Can we connect the data to known world events that triggered their popularity?
 
 ### Summary Information
 
 Many people underestimate the resources that the library provides. Some say that with the direction the technology is going, the internet may be all we need and libraries will no longer serve a purpose. To demonstrate that this is not the case at all, here are the total amount of digital and physical items that were checked out from in 2017 and 2022:
-  
+
+**Total Digital and Physical Checkouts For 2017 and 2022**
+
 |Year|Usage Class|Checkouts|
 |:---|:---|:---|
 2017|Digital|756,756|
@@ -24,30 +26,33 @@ Many people underestimate the resources that the library provides. Some say that
 2022|Digital|1,962,294|
 2022|Physical|1,094,618|
 
-While physical items are being checked out by almost half the amount the once were, digital checkouts have increased by almost 2.6 times. The SPL has done an excellent job of keeping up with technological changes and continuing to provide accessible resources. 
+While physical items are being checked out by almost half the amount they once were, digital checkouts have increased by almost 2.6 times. The Seattle Public Library has done an excellent job of keeping up with technological changes and continuing to provide accessible resources. 
 
 
-To get more familiar with this data set, a table has created demonstrating the average number of particular items checked out between 2017-2023
+To get more familiar with this data set, a table has been created to demonstrate the average number of particular items using checkout data from 2017-2023
+
+**Average Yearly Checkouts For Specific Material Types**
 
 |Material Type|Average Number of Checkouts|
 |:---|:---|
-|AUDIOBOOK|532667|
-|BOOK|913995|
-|EBOOK|721888|
-|MAGAZINE|53827|
-|MUSIC|1784|
-|SOUNDDISC|38125|
-|VIDEODISC|475222|
+|AUDIOBOOK|532,667|
+|BOOK|913,995|
+|EBOOK|721,888|
+|MAGAZINE|53,827|
+|MUSIC|1,784|
+|SOUNDDISC|38,125|
+|VIDEODISC|475,222|
 
+Books seem to be, on average, the most checked out material type with eBooks as the second. The least checked out material type between these 7 seem to be music.
 
 ### The Dataset
 
 - Who collected/published the data?  
-  - The Seattle Public Library
+  - This data was published by Seattle Public Library.
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
   - The parameters of the data are UsageClass, CheckoutType, MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Title, ISBN, Creator, Subjects, Publisher, and PublicationYear.
 - How was the data collected or generated?  
-  - The data was generated through various current and historical sources. Overdrive, Hoopla, Freegal, FBDigital provide data on digital items. Legrady Atrwork Data Archive sourced the physical item data from April 2005 to September 2016. Horizon ILS reports the rest out the physical checkout data from October 2016 onwards. It is updated monthly.
+  - The data was generated through various current and historical sources. Overdrive, Hoopla, Freegal, FBDigital provide data on digital items. Legrady Atrwork Data Archive sourced the physical item data from April 2005 to September 2016. Horizon ILS reports the rest f the physical checkout data from October 2016 on. It is updated monthly.
 - Why was the data collected?  
   - The data was collected to find trends within all this information. From this, the library can work to better their services to the community it serves.
 - What, if any, ethical questions do you need to consider when working with this data? 
@@ -59,44 +64,47 @@ To get more familiar with this data set, a table has created demonstrating the a
   - This data set has missing values in some important columns such as published year. This can cause problems when trying to accurately reference a certain item or correctly calculate relevant values. It also can result in not accrediting a creator properly.
   - Sometimes creators are listed in the "Title" column rather than the "Creator" column. This may cause issues when trying to sort by specific creators.
   - There are many variations in publication date. While the FAQ section of the Seattle Public Library clarify them, it may make bring up problems when trying to sort the data.
-  - A limitation that needs to be considered is how the library functioned in 2020 due to Covid. It was simply impossible to checkout certain items during this time due to the neccessary precautions that needed to be taken. 
+  - A limitation that needs to be considered is how the library functioned in 2020 due to Covid-19. It was simply impossible to checkout certain items during this time due to the necessary precautions that needed to be taken. This may have included the closure of libraries and the general wariness of checking out materials a person with Covid-19 could have previously borrowed.
 
 ### First Trends Over Time Chart
-This chart was created to understand what media library users prefer to use to understand J.K. Rowlings's wizarding world of Harry Potter in 2022.
-
-A line chart was used to clearly demonstrate trends over time. The month is demonstrated over the x-axis with the number of checkouts serving as the y-axis. Each line is a different color to easily identify the material type. 
 
 ```{r, message = FALSE, echo = FALSE, warning = FALSE, echo = FALSE, code = readLines("chart1.R")}
 ```
 
+- Purpose:
+  - This chart was created to understand the relevance of J.K. Rowlings's wizarding world of Harry Potter in 2022 and what media library users prefer. A line chart was used to clearly demonstrate trends over time. The month is demonstrated over the x-axis with the number of checkouts serving as the y-axis. Each line is a different color to easily identify the material type. 
+
 - Trends:
+  - There was a general decrease across all material types regarding Harry Potter. This may indicate that as time goes on, the series is getting more and more unpopular.
   - From the chart, it is clear to see that audio books are the most preferred media to get through the book series. This is understandable due to how long each book is.
   - The movies are the least popular out of all the media type. The chart suggests that people prefer the book series over the movie series.
   - There was an overall decrease in the amount of videodiscs checkout throughout the year. This was the year that major streaming services, such as Hulu and Peacock, introduced the film series to their platform. This trend could potentially be credited to this.
 
 ### Second Trends Over Time Chart
 
-This chart was created to demonstrate book trends from 2017-2023.
-
-This chart uses every year to mark its x-axis and total checkouts on the y-axis. Due to high qunatities, the y-axis has been abbreviated. The lines have been created using different colors to easily identify different material types.
-
 ```{r, message = FALSE, echo = FALSE, warning = FALSE, echo = FALSE, code = readLines("chart2.R")}
 ```
+
+- Purpose:
+  - This line chart was created to demonstrate book trends from 2017-2023.This chart uses every year to mark its x-axis and total checkouts on the y-axis. Due to high quantities, the y-axis has been abbreviated. The lines have been created using different colors to easily identify different material types.
+
 - Trends:
   - There is a dramatic decrease in total checkouts in 2023 because there is currently not enough data to demonstrate the entire year.
-    - There was an extremely dramatic decrease in physical books in 2020. This can be accredited to the global Covid-19 pandemic quarantine. 
-- Physical book checkouts steadily increased after 2020, but they have not gone back up to the numbers they once were at.
-  - Audiobooks steadily increased from 2017-2019 and had a significant jump in 2020. Since then, it has slightly declined. Its peak in 2020 can be considered to have occured due to the pandemic.
-  - Ebooks have steadily increased throughout 2017-2022. It peaked in 2022, demonstrated consumers preference for this home-accessible item.
+  - While books were the most checked out material in 2017-2019, there was an extremely dramatic decrease in physical books in 2020. This can be accredited to the global Covid-19 pandemic. 
+  - Physical book checkouts steadily increased after 2020, but they have not gone back up to the numbers they once were at. They seem to remain the least checked out material. 
+  - Audiobooks steadily increased from 2017-2019 and had a significant jump in 2020. Since then, it has slightly declined. Its peak in 2020 can be considered to have occurred due to the pandemic.
+  - Ebooks have steadily increased throughout 2017-2022. It peaked in 2022, demonstrating consumers preference for this home-accessible item.
 
 ### Your Choice
-A bar graph was chosen to represent this data to easily identify just how "popular" the most checked out book of the year was. The y-axis represents the year while the x-axis demonstrates the number of checkouts. This has been flipped for more easily readability. A legend was created with various colors to easily identify the popular book for that year.
 
-
-```{r, fig.length = 10, fig.width = 12, message = FALSE, warning = FALSE, echo = FALSE, code = readLines("chart3.R")}
+```{r, fig.length = 8, fig.width = 10, message = FALSE, warning = FALSE, echo = FALSE, code = readLines("chart3.R")}
 ```
 
-- Trends:
-  - The 2020 most popular book significantly has more checkouts than the rest of the years. Both this and the book itself, "So You Want to Talk about Race" can be attributed to the events that occurred this year in the United States. Around this time, the Black Lives Matter movement was at its height following the death of George Floyd.
-  - Besides 2023 (due to lack of data collection for the year), the lowest checked out popular book was "The Vanishing Half: A Novel" in 2017.
+- Purpose:
+  - A bar graph was chosen to rank the most popular titles of each year and just how "popular" the most checked out book of the year was. By book, this includes ebooks, audiobooks, and physical books. The y-axis represents the year while the x-axis demonstrates the number of checkouts. This has been flipped for more easy readability. A legend was created with various colors to easily identify the popular book for that year.
 
+- Trends:
+  - 2020's most popular book significantly has more checkouts than the rest of the years. Both this and the title itself, "So You Want to Talk about Race" can be attributed to the events that occurred this year in the United States. Around this time, the Black Lives Matter movement was at its height following the death of George Floyd.
+  - Besides 2023 (due to lack of data collection for the year), the lowest checked out popular book was "The Vanishing Half: A Novel" in 2017.
+  - The most popular books from more recent years tend to have much more popularity than older popular books. This could be accredited to the significant impact of social platforms such as TikTok, that has a major tendency to make items popular.
+  - Michelle Obama's book, Becoming, was extremely popular in 2019. This was two years after her husband, Barack Obama, ended his 8 year term of U.S. presidency, and a controversial Donald Trump took office. These events could be argued to have played a major role in the popularity of this book.
